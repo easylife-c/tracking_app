@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>School Lost & Found</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<header class="app-header">
+		<div class="container">
+			<h1><a href="{{ url_for('index') }}">School Lost & Found</a></h1>
+			<nav>
+				<a class="btn" href="{{ url_for('index') }}">All Reports</a>
+				<a class="btn primary" href="{{ url_for('create') }}">New Report</a>
+			</nav>
+		</div>
+	</header>
+	<main class="container">
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				<ul class="flash-list">
+					{% for category, message in messages %}
+						<li class="flash {{ category }}">{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		{% block content %}{% endblock %}
+	</main>
+	<footer class="app-footer">
+		<div class="container">&copy; {{ 2025 }} School Lost & Found</div>
+	</footer>
+</body>
+</html>

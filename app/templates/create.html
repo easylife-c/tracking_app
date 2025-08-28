@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>New Lost Item Report</h2>
+<form class="form" method="post" enctype="multipart/form-data">
+	<div class="field">
+		<label for="person_name">Student Name</label>
+		<input id="person_name" name="person_name" required placeholder="e.g., Jane Doe">
+	</div>
+	<div class="field">
+		<label for="class_name">Class</label>
+		<input id="class_name" name="class_name" required placeholder="e.g., 7A">
+	</div>
+	<div class="field">
+		<label for="return_location">Where to return</label>
+		<input id="return_location" name="return_location" required placeholder="e.g., Front Office">
+	</div>
+	<div class="field">
+		<label for="status">Status</label>
+		<select id="status" name="status">
+			{% for s in statuses %}
+				<option value="{{ s }}" {% if s=='REPORTED' %}selected{% endif %}>{{ s.title() }}</option>
+			{% endfor %}
+		</select>
+	</div>
+	<div class="field">
+		<label for="picture">Picture (optional)</label>
+		<input id="picture" name="picture" type="file" accept="image/*">
+	</div>
+	<div class="actions">
+		<button class="btn primary" type="submit">Submit Report</button>
+		<a class="btn" href="{{ url_for('index') }}">Cancel</a>
+	</div>
+</form>
+{% endblock %}
