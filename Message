@@ -1,0 +1,13 @@
+บันทึกข้อมูลลงในชีตSHEED_ID:1cR-
+
+HEfMycOj6MQ6HN41902GnMogCTH79
+
+7MQ3tQkYxeQ คอลัมน์ในชีต
+
+SHEET_NAME:Keane1
+
+ระบบบันทึกข้อมูลแบบถาวร
+
+-โดยส่งข้อมูลแบบ JSONP โดยตรงแทนการ
+
+ใช้เframe ซึ่งอาจจะมีปัญหาเรื่อง cross-origin ไปยังApp Script ที่ URL:
