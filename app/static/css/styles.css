@@ -1,0 +1,83 @@
+:root {
+	--blue-600: #2563eb;
+	--blue-700: #1d4ed8;
+	--blue-100: #dbeafe;
+	--blue-50: #eff6ff;
+	--gray-900: #0f172a;
+	--gray-600: #475569;
+	--gray-200: #e5e7eb;
+	--white: #ffffff;
+	--radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	color: var(--gray-900);
+	background: var(--blue-50);
+}
+
+.container {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.app-header {
+	background: linear-gradient(90deg, var(--blue-700), var(--blue-600));
+	color: var(--white);
+}
+.app-header h1 { margin: 0; font-size: 1.5rem; }
+.app-header a { color: var(--white); text-decoration: none; }
+.app-header nav { display: flex; gap: .5rem; }
+
+.app-footer {
+	padding: 1rem 0;
+	color: var(--gray-600);
+	text-align: center;
+}
+
+.btn {
+	background: var(--white);
+	border: 1px solid var(--gray-200);
+	border-radius: var(--radius);
+	padding: .5rem .75rem;
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--gray-900);
+	font-weight: 600;
+}
+.btn.primary {
+	background: var(--blue-600);
+	color: var(--white);
+	border-color: var(--blue-600);
+}
+.btn.small { padding: .35rem .5rem; font-size: .9rem; }
+
+.flash-list { list-style: none; padding: 0; }
+.flash { padding: .5rem .75rem; border-radius: var(--radius); margin: .5rem 0; }
+.flash.success { background: #dcfce7; }
+.flash.error { background: #fee2e2; }
+
+.toolbar { margin: 1rem 0; }
+.filters { display: flex; gap: .5rem; }
+.filters input, .filters select { padding: .5rem; border-radius: var(--radius); border: 1px solid var(--gray-200); }
+
+.form { display: grid; gap: 1rem; max-width: 640px; }
+.field { display: grid; gap: .25rem; }
+.field input, .field select, .field textarea { padding: .6rem .7rem; border: 1px solid var(--gray-200); border-radius: var(--radius); }
+.actions { display: flex; gap: .5rem; }
+
+.cards { margin-top: 1rem; }
+.card-list { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.thumb { width: 100%; height: 180px; background: var(--blue-100); display: grid; place-items: center; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.placeholder { color: var(--gray-600); }
+.info { padding: .75rem; display: grid; gap: .25rem; }
+.status { font-weight: 700; }
+.status.reported { color: #92400e; }
+.status.found { color: #065f46; }
+.status.returned { color: #0f766e; }
